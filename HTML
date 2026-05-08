@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PayFlex Help Center</title>
+
+<!-- CUSTOM DOMAIN READY -->
+<!-- contoh:
+https://help.payflexcenter.com
+-->
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:
+  radial-gradient(circle at top left,#5b0000,#120000 45%),
+  #0f0f0f;
+  overflow:hidden;
+  color:white;
+}
+
+/* LOADING SCREEN */
+
+.loader{
+  position:fixed;
+  inset:0;
+  background:#0f0f0f;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:99999;
+  transition:.5s;
+}
+
+.loader-logo{
+  width:95px;
+  height:95px;
+  border-radius:28px;
+  background:linear-gradient(145deg,#ff1a1a,#8f0000);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:42px;
+  font-weight:bold;
+
+  box-shadow:
+  0 0 30px rgba(255,0,0,.35),
+  0 0 70px rgba(255,0,0,.15);
+
+  animation:pulse 2s infinite;
+}
+
+.loader-title{
+  margin-top:25px;
+  font-size:24px;
+  font-weight:700;
+}
+
+.loader-sub{
+  margin-top:10px;
+  color:#aaa;
+  font-size:14px;
+}
+
+.progress{
+  width:260px;
+  height:7px;
+  background:rgba(255,255,255,.08);
+  border-radius:20px;
+  overflow:hidden;
+  margin-top:30px;
+}
+
+.bar{
+  width:0%;
+  height:100%;
+  border-radius:20px;
+  background:linear-gradient(90deg,#ff1a1a,#ff6b6b);
+  animation:load 4s forwards;
+}
+
+/* MAIN */
+
+.main{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px;
+}
+
+.glass-card{
+  width:100%;
+  max-width:430px;
+
+  background:rgba(255,255,255,.08);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:blur(18px);
+
+  border-radius:30px;
+
+  padding:40px 30px;
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,.4);
+
+  text-align:center;
+
+  animation:fadeUp 1s ease;
+}
+
+.logo{
+  width:85px;
+  height:85px;
+  margin:auto;
+
+  border-radius:24px;
+
+  background:linear-gradient(145deg,#ff1a1a,#9e0000);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:34px;
+  font-weight:bold;
+
+  box-shadow:
+  0 0 30px rgba(255,0,0,.3);
+}
+
+h1{
+  margin-top:25px;
+  font-size:32px;
+}
+
+.desc{
+  margin-top:14px;
+  color:#d1d1d1;
+  line-height:1.7;
+  font-size:15px;
+}
+
+.feature-box{
+  margin-top:30px;
+  text-align:left;
+}
+
+.feature{
+  padding:14px;
+  border-radius:14px;
+
+  background:rgba(255,255,255,.05);
+
+  margin-bottom:12px;
+
+  border:1px solid rgba(255,255,255,.04);
+
+  color:#e4e4e4;
+  font-size:14px;
+}
+
+.btn{
+  display:block;
+  width:100%;
+
+  margin-top:30px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  text-decoration:none;
+
+  color:white;
+
+  font-weight:bold;
+
+  background:linear-gradient(145deg,#ff1a1a,#a30000);
+
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+/* FLOATING TELEGRAM */
+
+.float-telegram{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+
+  width:65px;
+  height:65px;
+
+  border-radius:50%;
+
+  background:#229ED9;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-decoration:none;
+
+  font-size:30px;
+
+  color:white;
+
+  box-shadow:
+  0 0 30px rgba(34,158,217,.45);
+
+  animation:bounce 2s infinite;
+
+  z-index:999;
+}
+
+/* ANIMATION */
+
+@keyframes load{
+  from{
+    width:0%;
+  }
+  to{
+    width:100%;
+  }
+}
+
+@keyframes pulse{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+@keyframes bounce{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+
+<div class="loader" id="loader">
+
+  <div class="loader-logo">
+    P
+  </div>
+
+  <div class="loader-title">
+    PayFlex Help Center
+  </div>
+
+  <div class="loader-sub">
+    Connecting securely...
+  </div>
+
+  <div class="progress">
+    <div class="bar"></div>
+  </div>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+  <div class="glass-card">
+
+    <div class="logo">
+      P
+    </div>
+
+    <h1>PayFlex Help Center</h1>
+
+    <div class="desc">
+      Pusat bantuan pelanggan untuk layanan akun, informasi sistem, dan bantuan online 24/7.
+    </div>
+
+    <div class="feature-box">
+
+      <div class="feature">
+        ✔ Secure customer assistance
+      </div>
+
+      <div class="feature">
+        ✔ Fast response support
+      </div>
+
+      <div class="feature">
+        ✔ Premium mobile experience
+      </div>
+
+    </div>
+
+    <!-- GANTI USERNAME TELEGRAM -->
+    <a href="https://t.me/@BoostpayflexBot"
+    class="btn">
+      Hubungi Support
+    </a>
+
+  </div>
+
+</div>
+
+<!-- FLOATING TELEGRAM -->
+
+<a href="https://t.me/@BoostpayflexBot"
+class="float-telegram">
+✈
+</a>
+
+<script>
+
+setTimeout(() => {
+
+  document.getElementById("loader").style.opacity="0";
+
+  setTimeout(() => {
+
+    document.getElementById("loader").style.display="none";
+
+  },500);
+
+},4000);
+
+</script>
+
+</body>
+</html>
